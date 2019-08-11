@@ -9,6 +9,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Layout;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         data.add("setOrientation");
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        mRcvAdapter = new RecyclerViewAdapter(data);
+        mRcvAdapter = new RecyclerViewAdapter(this, data);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -39,4 +40,39 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mRcvAdapter);
 
     }
+
+//    RecyclerView mRecyclerView;
+//    RecyclerViewAdapter mRcvAdapter;
+//    List<String> data;
+//    @SuppressLint("WrongConstant")
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//
+//        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+//        data = new ArrayList<>();
+//        data.add("Nguyễn Minh Hưng");
+//        data.add("Hoàng Minh Lợi");
+//        data.add("Nguyễn Duy Bảo");
+//        data.add("Nguyễn Ngọc Doanh");
+//        data.add("Nguyễn Phạm Thế Hà");
+//        data.add("Trần Anh Đức");
+//        data.add("Trần Minh Hải");
+//        mRcvAdapter = new RecyclerViewAdapter(this, data);
+//
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+//        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//
+//        mRecyclerView.setLayoutManager(layoutManager);
+//        mRecyclerView.setAdapter(mRcvAdapter);
+//
+//        mRcvAdapter.setOnItemClickedListener(new RecyclerViewAdapter.OnItemClickedListener() {
+//            @Override
+//            public void onItemClick(String username) {
+//                Toast.makeText(MainActivity.this, username, Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
 }
