@@ -3,6 +3,7 @@ package com.example.recyclerview;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -29,14 +30,20 @@ public class MainActivity extends AppCompatActivity {
         data.add("Le Van Thang");
         data.add("SaveInstanceState");
         data.add("setOrientation");
+        data.add("File");
+        data.add("Edit View");
+        data.add("Navigate Code");
+        data.add("Analyze Refacor");
+        data.add("Buil Run Tools");
+        data.add("VCS Window Help");
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         mRcvAdapter = new RecyclerViewAdapter(this, data);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        staggeredGridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setLayoutManager(staggeredGridLayoutManager);
         mRecyclerView.setAdapter(mRcvAdapter);
 
     }
