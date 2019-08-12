@@ -36,11 +36,14 @@ public class MainActivity extends AppCompatActivity {
         data.add("Analyze Refacor");
         data.add("Buil Run Tools");
         data.add("VCS Window Help");
+        data.add("compileDebugSources");
+        data.add("assembleDebug");
+
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         mRcvAdapter = new RecyclerViewAdapter(this, data);
 
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         staggeredGridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         mRecyclerView.setLayoutManager(staggeredGridLayoutManager);
